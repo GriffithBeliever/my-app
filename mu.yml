@@ -6,7 +6,7 @@ service:
   port: 80
   healthEndpoint: /
   pathPatterns:
-  - /
+  - /a/*
   pipeline:
     source:
       provider: GitHub
