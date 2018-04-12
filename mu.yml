@@ -1,6 +1,6 @@
-environments:
-- name: acceptance
-- name: production
+environment:
+  - name: mutest
+    provider: ecs
 service:
   name: extension
   port: 80
@@ -8,3 +8,10 @@ service:
   pathPatterns:
   - /*
   pipeline:
+    source:
+      provider: GitHub
+      repo: GriffithBeliever/my-app
+    acceptance:
+      environment: mutest
+    production:
+      disabled: true
